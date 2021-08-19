@@ -1,0 +1,72 @@
+.footer-list {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.footer-list i {
+  font-size: 150%;
+}
+
+.footer-list a {
+  color: #FFB500;
+  text-decoration: none;
+}
+
+.footer-list a:hover {
+  color: #FFDA13;
+  text-decoration: none;
+}
+
+.footer-list a:visited {
+  color: #FFB500;
+  text-decoration: none;
+}
+
+.footer-list a:visited:hover {
+  color: #FFDA13;
+  text-decoration: none;
+}
+
+.authors {
+  font-size: 14px;
+  margin: auto;
+  white-space: normal;
+  text-align: center;
+}
+
+.authors a {
+  color: #FFB500;
+  text-decoration: none;
+}
+
+.authors a:hover {
+  color: #FFDA13;
+  text-decoration: none;
+}
+
+.authors a:visited {
+  color: #FFB500;
+  text-decoration: none;
+}
+
+.authors a:visited:hover {
+  color: #FFDA13;
+  text-decoration: none;
+}
+
+.footer {
+  width: 80%;
+  margin: auto;
+  background-color: #273550;
+}
+
+.footer-container {
+  width: 100vw;
+  background-color: #273550;
+}
+
+.second-row {
+  display: flex;
+  flex-wrap: wrap;
+}

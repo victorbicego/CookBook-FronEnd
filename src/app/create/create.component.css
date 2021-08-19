@@ -1,0 +1,36 @@
+.create-form {
+  width: 80%;
+  margin: auto;
+}
+
+.my-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.form-container {
+  width: 100vw;
+  padding: 5% 0;
+  background-color: lightgrey;
+}
+
+.name {
+  width: 40%;
+}
+
+.author {
+  width: 40%;
+}
+
+.unity {
+  width: 20%;
+}
+
+.quantity {
+  width: 30%;
+}
+
+.ingredientName {
+  width: 50%;
+}
