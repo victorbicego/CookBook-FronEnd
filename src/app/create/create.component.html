@@ -1,6 +1,8 @@
 <div class="form-container">
+
   <mat-card class="create-form">
-    <div>
+
+    <div class="title">
       <p>
         Enter the new recipe information.
       </p>
@@ -18,103 +20,101 @@
         <input type="text" matInput placeholder="Ex. Toni Stark" formControlName="author">
       </mat-form-field>
 
-      <div formArrayName="ingredients">
-        <div *ngFor="let _ of ingredients.controls; index as i">
-          <form [formGroupName]="i">
-            <mat-form-field class="unity" appearance="fill">
+      <div formArrayName="ingredientList" class="ingredients-container">
+        <div *ngFor="let _ of ingredients.controls; index as i" class="ingredients">
+          <form [formGroupName]="i" class="form-ingredient">
+            <mat-form-field class="unit" appearance="fill">
               <mat-label>Unity</mat-label>
-              <mat-select formControlName="unity">
-                <mat-option *ngFor="let option of unities" [value]="option">{{option}}</mat-option>
+              <mat-select formControlName="unit">
+                <mat-option *ngFor="let option of unities" [value]="option.toUpperCase()">{{option}}</mat-option>
               </mat-select>
             </mat-form-field>
 
             <mat-form-field class="quantity" appearance="fill">
               <mat-label>Quantity</mat-label>
-              <input type="number" matInput placeholder="Ex. 200" formControlName="quantity">
+              <input type="number" matInput placeholder="Ex. 200" formControlName="amount">
             </mat-form-field>
 
             <mat-form-field class="ingredientName" appearance="fill">
               <mat-label>Name</mat-label>
-              <input matInput placeholder="Ex. Cheese" formControlName="ingredientName">
+              <input matInput placeholder="Ex. Cheese" formControlName="name">
             </mat-form-field>
           </form>
-          <button (click)="removeIngredient(i)" [disabled]="ingredients.length==1">Remove choice</button>
+          <button class="remove" (click)="removeIngredient(i)" [disabled]="ingredients.length==1">Remove choice</button>
         </div>
       </div>
       <button (click)="addIngredient()" [disabled]="!ingredients.valid">Add another ingredient</button>
 
 
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="instructions" appearance="fill">
         <mat-label>Recipe's instructions</mat-label>
         <textarea type="text" matInput placeholder="Ex. First cut the tomatoes..."
-                  formControlName="instructions"></textarea>
+                  formControlName="instruction"></textarea>
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="difficulty" appearance="fill">
         <mat-label>Difficulty</mat-label>
-        <mat-select formControlName="difficulty">
-          <mat-option *ngFor="let difficulty of difficulties" [value]="difficulty">{{difficulty}}</mat-option>
+        <mat-select formControlName="difficultyGrade">
+          <mat-option *ngFor="let difficulty of difficulties"
+                      [value]="difficulty.toUpperCase()">{{difficulty}}</mat-option>
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="category" appearance="fill">
         <mat-label>Category</mat-label>
         <mat-select formControlName="category">
-          <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+          <mat-option *ngFor="let category of categories" [value]="category.toUpperCase()">{{category}}</mat-option>
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+
+      <mat-form-field class="cuisine" appearance="fill">
         <mat-label>Cuisine</mat-label>
+
+
         <mat-select formControlName="cuisine">
-
-          <mat-optgroup *ngFor="let cuisine of cuisines" [label]="cuisine.continent">
-            <mat-option *ngFor="let country of cuisine.countries" [value]="country">
-              {{country}}
-            </mat-option>
+          <mat-optgroup *ngFor="let singleObject of cuisines$|async" [label]="singleObject.continent">
+            <mat-option *ngFor="let country of singleObject.countries"
+                        [value]={continent:singleObject.continent,country:country.country,id:country.id}>{{country.country}}</mat-option>
           </mat-optgroup>
-          <mat-option value="Other">Other
-          </mat-option>
-
         </mat-select>
+
+
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+
+      <mat-form-field class="time" appearance="fill">
         <mat-label>Recipe's preparation time (minutes)</mat-label>
         <input type="number" matInput placeholder="Ex. 120" formControlName="preparationTime">
       </mat-form-field>
 
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="portion" appearance="fill">
         <mat-label>Recipe's portions</mat-label>
         <input type="number" matInput placeholder="Ex. 2" formControlName="portion">
       </mat-form-field>
 
-      <mat-form-field class="example-chip-list" appearance="fill">
+      <mat-form-field class="hashtag" appearance="fill">
         <mat-label>Hashtags</mat-label>
-
-        <mat-chip-list aria-label="Hashtags" multiple formControlName="hashtags">
+        <mat-chip-list aria-label="Hashtags" multiple formControlName="hashtagList">
 
           <mat-chip
-            *ngFor="let hashtag of hashtags"
+            *ngFor="let hashtag of hashtags$|async"
             [value]="hashtag"
             (click)="chip.selected ? chip.deselect() : chip.selectViaInteraction()"
             #chip="matChip">
-            #{{hashtag}}
+            #{{hashtag.text}}
           </mat-chip>
 
         </mat-chip-list>
-
-
       </mat-form-field>
 
-      <button mat-button (click)="popupConfirmation()" [disabled]="!recipeCreateFormGroup.valid">Save</button>
     </form>
 
-  </mat-card>
+    <button class="save" mat-raised-button color="primary" (click)="openDialog()"
+            [disabled]="!recipeCreateFormGroup.valid">Save recipe
+    </button>
 
-  <div *ngIf="showConfirm">
-    <p>Are you sure?</p>
-    <button mat-button type="submit" (click)="confirmInput()">Yes</button>
-    <button mat-button (click)="denyInput()">No</button>
-  </div>
+  </mat-card>
 </div>
+
+<div></div>

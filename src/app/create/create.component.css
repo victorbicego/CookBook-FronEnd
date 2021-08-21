@@ -6,7 +6,7 @@
 .my-form {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: left;
 }
 
 .form-container {
@@ -16,21 +16,82 @@
 }
 
 .name {
-  width: 40%;
+  width: 100%;
 }
 
 .author {
-  width: 40%;
+  width: 100%;
 }
 
 .unity {
-  width: 20%;
+  width: 15%;
 }
 
 .quantity {
-  width: 30%;
+  width: 20%;
 }
 
 .ingredientName {
-  width: 50%;
+  width: 40%;
+}
+
+.instructions {
+  width: 100%;
+  height: 100%;
+}
+
+.instructions textarea {
+  height: 100px;
+}
+
+.title {
+  text-align: left;
+  font-size: 18px;
+}
+
+.difficulty {
+  width: 30%;
+}
+
+.category {
+  width: 30%;
+}
+
+.cuisine {
+  width: 40%;
+}
+
+.time {
+  width: 25%;
+}
+
+.portion {
+  width: 25%;
+}
+
+.hashtag {
+  width: 100%;
+}
+
+.save {
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+}
+
+.remove {
+  width: 10%;
+}
+
+.ingredients {
+  width: 100%;
+}
+
+.ingredients-container {
+  width: 100%;
+}
+
+.form-ingredient{
+  width: 70%;
+  display: inline-block;
 }

@@ -1,82 +1,82 @@
 import {Component, OnInit} from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
+import {MatDialog} from "@angular/material/dialog";
+import {ConfirmDialogComponent} from "../confirm-dialog/confirm-dialog.component";
+import {RecipeService} from "../services/recipe.service";
+import {Observable} from "rxjs";
+import {CuisineList} from "../interfaces/cuisine";
+import {CuisineService} from "../services/cuisine.service";
+import {Hashtag} from "../interfaces/hashtag";
+import {HashtagService} from "../services/hashtag.service";
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
+
 export class CreateComponent implements OnInit {
 
-  unities: string[] = ["milliliter", "liter", "gram", "kilogram", "pinch", "unity"];
+  unities: string[] = ["milliliter", "liter", "gram", "kilogram", "unit"];
   difficulties: string[] = ["Easy", "Intermediate", "Hard"];
   categories: string[] = ["Starter", "Main", "Dessert"];
-  cuisines: { continent: string, countries: string[] }[] = [
-    {continent: "Africa", countries: ["Egypt", "South Africa"]},
-    {continent: "Asia", countries: ["China", "Japan", "Thailand"]},
-    {continent: "Europe", countries: ["France", "German", "Greece", "Italy", "Portugal", "Poland", "Spain", "Russia"]},
-    {continent: "North America", countries: ["Canada", "Mexico", "USA"]},
-    {continent: "South America", countries: ["Argentina", "Brazil", "Chile", "Peru"]},
-  ];
-  hashtags: string[] = ["vegan", "party", "kids", "summer"];
-
-  showConfirm: boolean = false;
 
   recipeCreateFormGroup = new FormGroup({
-    name: new FormControl("", Validators.maxLength(30)),
-    instructions: new FormControl("", Validators.maxLength(350)),
-    ingredients: new FormArray([
+    name: new FormControl("", [Validators.maxLength(50), Validators.required]),
+    author: new FormControl("", [Validators.maxLength(30), Validators.required]),
+    instruction: new FormControl("", [Validators.maxLength(600), Validators.required]),
+    ingredientList: new FormArray([
       new FormGroup({
-        unity: new FormControl("", Validators.required),
-        quantity: new FormControl("", Validators.required),
-        ingredientName: new FormControl("", [Validators.maxLength(50), Validators.required])
-      })], Validators.minLength(1)),
-    difficulty: new FormControl("", Validators.required),
+        unit: new FormControl("", Validators.required),
+        amount: new FormControl("", [Validators.min(1), Validators.required]),
+        name: new FormControl("", [Validators.maxLength(50), Validators.required])
+      })], [Validators.minLength(1), Validators.required]),
+    difficultyGrade: new FormControl("", Validators.required),
     category: new FormControl("", Validators.required),
     cuisine: new FormControl("", Validators.required),
-    author: new FormControl("", Validators.maxLength(30)),
-    preparationTime: new FormControl("", Validators.min(1)),
-    portion: new FormControl("", Validators.min(1)),
-    hashtags: new FormControl([''])
-  })
+    preparationTime: new FormControl("", [Validators.min(1), Validators.required]),
+    portion: new FormControl("", [Validators.min(1), Validators.required]),
+    hashtagList: new FormControl([''])
+  });
 
-  ingredients = this.recipeCreateFormGroup.get('ingredients') as FormArray;
+  ingredients: FormArray = this.recipeCreateFormGroup.get('ingredientList') as FormArray;
 
-  constructor() {
+  public cuisines$!: Observable<CuisineList[]>;
+  public hashtags$!: Observable<Hashtag[]>;
+
+  constructor(public dialog: MatDialog, private recipeService: RecipeService, private cuisineService: CuisineService, private hashtagService: HashtagService) {
   }
 
   ngOnInit(): void {
+    this.cuisineService.getAllCuisines();
+    this.cuisines$ = this.cuisineService.cuisines$;
+
+    this.hashtagService.getAllHashTags();
+    this.hashtags$ = this.hashtagService.hashtags$;
   }
 
-  popupConfirmation(): void {
-    this.showConfirm = true;
-  }
-
-  confirmInput(): void {
-    console.log(this.recipeCreateFormGroup.value);
-    this.showConfirm = !this.showConfirm;
-  }
-
-  denyInput(): void {
-    this.showConfirm = !this.showConfirm;
+  openDialog(): void {
+    let dialogRef = this.dialog.open(ConfirmDialogComponent);
+    dialogRef.componentInstance.saveRecipe.subscribe(() => {
+      console.log({...this.recipeCreateFormGroup.value});
+      this.recipeService.addRecipe({...this.recipeCreateFormGroup.value})
+    })
   }
 
   newIngredient(): FormGroup {
     return new FormGroup({
-      unity: new FormControl(""),
-      quantity: new FormControl(""),
-      ingredientName: new FormControl("")
+      unit: new FormControl("", Validators.required),
+      amount: new FormControl("", [Validators.min(1), Validators.required]),
+      name: new FormControl("", [Validators.maxLength(50), Validators.required])
     })
   }
 
   addIngredient() {
     this.ingredients.push(this.newIngredient());
-    console.log(this.recipeCreateFormGroup.get("quantities")?.value);
   }
 
   removeIngredient(i: number) {
     this.ingredients.removeAt(i);
-    console.log(this.recipeCreateFormGroup.get("quantities")?.value);
   }
 
 }

@@ -1,1 +1,5 @@
-<p>home works!</p>
+<ul>
+  <li *ngFor="let recipe of recipes$|async">
+    <p>Name:{{recipe.name}}</p>
+  </li>
+</ul>

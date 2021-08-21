@@ -1,19 +1,19 @@
-import {CuisineBase} from "./cuisine";
-import {IngredientBase} from "./ingredient";
+import {Ingredient} from "./ingredient";
+import {Cuisine} from "./cuisine";
+import {Hashtag} from "./hashtag";
 
-export interface RecipeBase {
+export interface Recipe {
+  id?:number,
   name: string;
-  instructions: string;
-  ingredients: IngredientBase;
-  difficulty: string;
-  category: string;
-  cuisine: CuisineBase;
   author: string;
+  instruction: string;
+  ingredientList: Ingredient[];
+  difficultyGrade: string;
+  category: string;
+  cuisine: Cuisine;
   preparationTime: number;
   portion: number;
-  hashtags: string;
+  hashtagList?: Hashtag[];
+  dateOfPost?:Date;
 }
 
-export interface Recipe extends RecipeBase {
-  id: number;
-}

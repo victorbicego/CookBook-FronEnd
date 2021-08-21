@@ -1,8 +1,13 @@
-export interface CuisineBase {
+export interface Cuisine {
+  id: number;
   continent: string;
   country: string;
 }
 
-export interface Cuisine extends CuisineBase {
-  id: number;
+export interface CuisineList {
+  continent: string;
+  countries: {
+    id: number;
+    country: string
+  }[];
 }
