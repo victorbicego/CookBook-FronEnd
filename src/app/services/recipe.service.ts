@@ -12,7 +12,7 @@ export class RecipeService {
   private recipesSubject$ = new BehaviorSubject<Recipe[]>([]);
   public recipes$: Observable<Recipe[]> = this.recipesSubject$.asObservable();
 
-  private singleRecipeSubject$ = new BehaviorSubject<any>(null);
+  private singleRecipeSubject$ = new BehaviorSubject<any>(undefined);
   public singleRecipe$: Observable<Recipe> = this.singleRecipeSubject$.asObservable();
 
   constructor(private http: HttpClient) {
@@ -36,10 +36,8 @@ export class RecipeService {
     })
   }
 
-  getRecipeById(id: number): void {
-    this.http.get<Recipe>(environment.baseUrl + "recipe/get/" + id).subscribe((singleRecipe: Recipe) => {
-      this.singleRecipeSubject$.next(singleRecipe);
-    })
+  getRecipeById(id: number): Observable<Recipe> {
+    return this.http.get<Recipe>(environment.baseUrl + "recipe/get/" + id);
   }
 
   deleteSong(id: number): void {

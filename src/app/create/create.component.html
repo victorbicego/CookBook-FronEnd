@@ -95,18 +95,18 @@
 
       <mat-form-field class="hashtag" appearance="fill">
         <mat-label>Hashtags</mat-label>
-        <mat-chip-list aria-label="Hashtags" multiple formControlName="hashtagList">
+        <mat-chip-list aria-label="Hashtags" multiple selectable>
 
-          <mat-chip
-            *ngFor="let hashtag of hashtags$|async"
-            [value]="hashtag"
-            (click)="chip.selected ? chip.deselect() : chip.selectViaInteraction()"
-            #chip="matChip">
+          <mat-chip [selected]="editRecipe?.hashTagList?.includes(hashtag)"
+                    *ngFor="let hashtag of hashtags$|async" [value]="hashtag"
+                    (click)="toggleSelection(chip)"
+                    #chip="matChip">
             #{{hashtag.text}}
           </mat-chip>
 
         </mat-chip-list>
       </mat-form-field>
+
 
     </form>
 

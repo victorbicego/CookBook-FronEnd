@@ -25,6 +25,9 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {AdminHashtagComponent} from './admin-hashtag/admin-hashtag.component';
 import {AdminCuisineComponent} from './admin-cuisine/admin-cuisine.component';
 import {HttpClientModule} from "@angular/common/http";
+import {SonginputComponent} from './songinput/songinput.component';
+import {SongeditComponent} from './songedit/songedit.component';
+import {ChipsMultiComponent} from './chips-multi/chips-multi.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import {HttpClientModule} from "@angular/common/http";
     HomeComponent,
     ConfirmDialogComponent,
     AdminHashtagComponent,
-    AdminCuisineComponent
+    AdminCuisineComponent,
+    SonginputComponent,
+    SongeditComponent,
+    ChipsMultiComponent
   ],
   imports: [
     BrowserModule,

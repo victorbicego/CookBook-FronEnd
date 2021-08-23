@@ -1,0 +1,13 @@
+<mat-form-field class="hashtag" appearance="fill">
+  <mat-label>Hashtags</mat-label>
+  <mat-chip-list aria-label="Hashtags" multiple selectable>
+
+    <mat-chip selected=true
+              *ngFor="let hashtag of hashtagList" [value]="hashtag"
+              (click)="toggleSelection(chip)"
+              #chip="matChip">
+      #{{hashtag.text}}
+    </mat-chip>
+
+  </mat-chip-list>
+</mat-form-field>

@@ -13,7 +13,7 @@ export interface Recipe {
   cuisine: Cuisine;
   preparationTime: number;
   portion: number;
-  hashtagList?: Hashtag[];
+  hashTagList?: Hashtag[];
   dateOfPost?:Date;
 }
 
