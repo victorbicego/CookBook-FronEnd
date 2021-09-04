@@ -1,0 +1,28 @@
+<div class="comment-wrapper">
+  <mat-card class="comment-mat-card" [formGroup]="commentForm" [ngClass]="{'dark': dark}">
+
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="text-input-wrapper" color="accent">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Ex. It was very delicius..." formControlName="text"
+                  class="text-input"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+
+    <div class="rating-wrapper">
+      <button *ngFor="let b of selected; let i=index" (click)="selectRating(i+1)" title="{{i+1}}/5"
+              [ngClass]="'button-'+selected[i]"><i class="fas fa-star"></i></button>
+    </div>
+
+    <div class="author-button-wrapper">
+      <mat-form-field appearance="fill" class="author-input" color="accent">
+        <mat-label>Author</mat-label>
+        <input matInput placeholder="Ex. Toni Stark" formControlName="author">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="saveComment()" [disabled]="!commentForm.valid">Save Comment</button>
+
+    </div>
+
+  </mat-card>
+</div>

@@ -1,0 +1,38 @@
+<div class="ingredient-form-wrapper">
+  <div *ngFor="let _ of ingredientList; index as i" class="ingredient-form">
+
+    <div class="unit-quantity-name-wrapper">
+
+      <mat-form-field class="unit" appearance="fill" color="accent">
+        <mat-label>Unity</mat-label>
+        <mat-select [(ngModel)]="ingredientList[i].unit" (ngModelChange)="onChange()" required>
+          <mat-option *ngFor="let option of unities" [value]="option.toUpperCase()">{{option}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="quantity" appearance="fill" color="accent">
+        <mat-label>Quantity</mat-label>
+        <input type="number" matInput placeholder="Ex. 200" [(ngModel)]="ingredientList[i].amount"
+               (ngModelChange)="onChange()" required min="0.25">
+      </mat-form-field>
+
+      <mat-form-field class="ingredient-name" appearance="fill" color="accent">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Ex. Cheese" [(ngModel)]="ingredientList[i].name" (ngModelChange)="onChange()"
+               required minlength="1">
+      </mat-form-field>
+
+    </div>
+
+    <div class="ingredient-button-wrapper">
+      <button mat-mini-fab color="primary" (click)="addIngredient()"
+              [disabled]="!isValidIngredient(ingredientList[i]) || ingredientList.length-1 !== i">
+        <mat-icon *ngIf="(i === ingredientList.length-1)">add</mat-icon>
+      </button>
+      <button mat-mini-fab color="accent" (click)="removeIngredient(i)" [disabled]="ingredientList.length==1">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </div>
+
+  </div>
+</div>

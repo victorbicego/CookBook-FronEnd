@@ -1,0 +1,58 @@
+.single-recipe-wrapper {
+  padding: 90px 1% 0 1%;
+  margin-bottom: 60px;
+}
+
+.recipe-card {
+  padding: 20px;
+}
+
+.title-interaction-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.title-wrapper{
+  width: 65%;
+}
+
+.image-ingredients-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 0;
+}
+
+.image-info-wrapper{
+  width: 55%;
+  min-height: 100%;
+  margin-right: 40px;
+}
+
+.instruction-wrapper {
+  margin: 30px 0 20px 0;
+}
+
+.instruction-text{
+  font-size: 18px;
+}
+
+.instruction-text {
+  font-size: 16px;
+  text-align: justify;
+  color: gray;
+}
+
+.author-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.author {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: darkgrey;
+}

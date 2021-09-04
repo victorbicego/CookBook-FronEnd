@@ -1,0 +1,21 @@
+<div class="interaction-wrapper">
+  <button class="interaction-button" (click)="favorite()" [ngClass]="{'dark': dark}">
+    <mat-icon>bookmark</mat-icon>
+  </button>
+  <button class="interaction-button" [matMenuTriggerFor]="shareMenu" [ngClass]="{'dark': dark}">
+    <mat-icon>share</mat-icon>
+  </button>
+  <button class="interaction-button" (click)="goToPrint()" [ngClass]="{'dark': dark}">
+    <mat-icon>print</mat-icon>
+  </button>
+  <button class="interaction-button" (click)="selectDark()" [ngClass]="{'dark': dark}">
+    <mat-icon>invert_colors</mat-icon>
+  </button>
+</div>
+
+<mat-menu #shareMenu="matMenu" yPosition="above" xPosition="after">
+  <div class="share-list">
+    <button class="share-button"><a mat-menu-item><i class="fab fa-facebook-square"></i></a></button>
+    <button class="share-button"><a mat-menu-item><i class="fab fa-pinterest-square"></i></a></button>
+  </div>
+</mat-menu>

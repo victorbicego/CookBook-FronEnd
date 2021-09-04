@@ -1,0 +1,48 @@
+.comment-wrapper {
+  margin-top: 30px;
+}
+
+.comment-mat-card {
+  max-width: 100%;
+  margin: auto;
+  padding: 30px 30px 15px 30px;
+}
+
+.text-input {
+  width: 100%;
+  text-align: justify;
+}
+
+.rating-wrapper button {
+  margin: 10px 16px 0 0;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.button-not-selected {
+  color: black;
+  opacity: 50%;
+}
+
+.button-selected {
+  color: #E91E63;
+}
+
+.author-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author{
+  font-size: 12px;
+  margin-bottom: 20px;
+  margin-top: 22px;
+  color: darkgrey;
+}
+
+.dark{
+  background-color: #121212;
+  color: white;
+}

@@ -1,0 +1,39 @@
+<div class="select-hashtag-wrapper">
+  <div class="select-wrapper">
+
+    <mat-form-field class="time" appearance="fill" color="accent">
+      <mat-label>Recipe's preparation time (minutes)</mat-label>
+      <input type="number" matInput placeholder="Ex. 120" [(ngModel)]="preparationTime" (ngModelChange)="onChange()"
+             required>
+    </mat-form-field>
+
+    <mat-form-field class="portion" appearance="fill" color="accent">
+      <mat-label>Recipe's portions</mat-label>
+      <input type="number" matInput placeholder="Ex. 2" [(ngModel)]="portion" (ngModelChange)="onChange()" required>
+    </mat-form-field>
+
+    <mat-form-field class="difficulty" appearance="fill" color="accent">
+      <mat-label>Difficulty</mat-label>
+      <mat-select [(ngModel)]="difficultyGrade" (ngModelChange)="onChange()" required>
+        <mat-option *ngFor="let difficulty of difficulties"
+                    [value]="difficulty.toUpperCase()">{{difficulty}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <mat-form-field class="hashtag-wrapper" appearance="fill" color="accent">
+    <mat-label>Hashtags</mat-label>
+    <mat-chip-list aria-label="Hashtags" multiple selectable [(ngModel)]="hashTagList" (ngModelChange)="onChange()"
+                   [compareWith]="compareFn">
+
+      <mat-chip *ngFor="let hashtag of hashtags" [value]="hashtag"
+                (click)="chip.selected? chip.deselect() : chip.selectViaInteraction()"
+                #chip="matChip" color="accent">
+        #{{hashtag.text}}
+      </mat-chip>
+
+    </mat-chip-list>
+  </mat-form-field>
+
+</div>

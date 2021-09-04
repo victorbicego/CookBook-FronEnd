@@ -1,0 +1,33 @@
+<app-page-title [mainText]="mainText" [subText]="subText"></app-page-title>
+
+<div class="single-recipe-wrapper">
+  <mat-card *ngIf="recipe" class="recipe-card" [ngClass]="{'dark': dark}">
+
+    <div class="title-interaction-wrapper">
+      <app-recipe-title [recipe]="recipe" [dark]="dark" class="title-wrapper"></app-recipe-title>
+      <app-recipe-interaction-menu [recipe]="recipe" [dark]="dark" (onDark)="selectDark()"
+                                   class="interaction-wrapper"></app-recipe-interaction-menu>
+    </div>
+
+    <div class="image-ingredients-wrapper">
+            <app-recipe-infos-image [recipe]="recipe" [dark]="dark"
+                                    class="image-info-wrapper"></app-recipe-infos-image>
+            <app-recipe-ingredients [recipe]="recipe" [dark]="dark"></app-recipe-ingredients>
+    </div>
+
+    <div class="instruction-wrapper">
+      <h2 class="instruction-title">Instructions</h2>
+      <p class="instruction-text" [ngClass]="{'dark': dark}">{{recipe.instruction}}</p>
+    </div>
+
+    <div class="author-button-wrapper">
+      <p class="author">Sent by {{recipe.author}} on {{recipe.dateOfPost}}</p>
+      <div class="button-wrapper">
+        <button mat-raised-button color="primary" (click)="goToEditPage()"> Edit Recipe</button>
+        <button mat-raised-button color="accent" (click)="delete()">Delete Recipe</button>
+      </div>
+    </div>
+
+  </mat-card>
+</div>
+<app-comment-main [dark]="dark"></app-comment-main>

@@ -1,0 +1,42 @@
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.interaction-wrapper {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.interaction-button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.interaction-button:hover {
+  cursor: pointer;
+  color: #E91E63;
+}
+
+.share-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.share-button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.share-button :hover {
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  color: #E91E63;
+}
+
+.share-button i {
+  font-size: 18px;
+}

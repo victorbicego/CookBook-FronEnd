@@ -1,0 +1,16 @@
+<mat-card class="newest-wrapper">
+  <mat-card-title>Looking for something new? Check our top recipes!</mat-card-title>
+
+  <div class="recipes-wrapper">
+    <div class="recipe" *ngFor="let recipe of newRecipes" (click)="goToSinglePageRecipe(recipe.id!)">
+      <mat-card-title class="recipe-title">{{recipe.name}}</mat-card-title>
+      <img class="recipe-image" *ngIf="recipe.category === 'DESSERT'" src="../../../../assets/dessert.jpg"
+           alt="dessert-image" (click)="goToSinglePageRecipe(recipe.id!)">
+      <img class="recipe-image" *ngIf="recipe.category === 'MAIN'" src="../../../../assets/main.jpg"
+           alt="main-image" (click)="goToSinglePageRecipe(recipe.id!)">
+      <img class="recipe-image" *ngIf="recipe.category === 'STARTER'" src="../../../../assets/starter.jpg"
+           alt="starter-image" (click)="goToSinglePageRecipe(recipe.id!)">
+    </div>
+  </div>
+
+</mat-card>

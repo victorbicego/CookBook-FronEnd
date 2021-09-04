@@ -1,0 +1,25 @@
+<mat-card-content class="name-category-cuisine-wrapper">
+
+  <mat-form-field class="name" appearance="fill" color="accent">
+    <mat-label>Recipe's name</mat-label>
+    <input type="text" matInput placeholder="Ex. Pizza" [(ngModel)]="name" (ngModelChange)="onChange()" required>
+  </mat-form-field>
+
+  <mat-form-field class="category" appearance="fill" color="accent">
+    <mat-label>Category</mat-label>
+    <mat-select [(ngModel)]="category" (ngModelChange)="onChange()" required>
+      <mat-option *ngFor="let category of categories" [value]="category.toUpperCase()">{{category}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="cuisine" appearance="fill" color="accent">
+    <mat-label>Cuisine</mat-label>
+    <mat-select [(ngModel)]="cuisineChild" (ngModelChange)="onChange()" [compareWith]="compareFn" required>
+      <mat-optgroup *ngFor="let continentName of continentList" [label]="continentName">
+        <mat-option *ngFor="let cuisineChild of (cuisineList | filterByContinent: continentName)"
+                    [value]="cuisineChild">{{cuisineChild.country}}</mat-option>
+      </mat-optgroup>
+    </mat-select>
+  </mat-form-field>
+
+</mat-card-content>

@@ -1,0 +1,59 @@
+.footer {
+  margin-top: 50px;
+}
+
+.footer-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.footer-list button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.footer-list i {
+  font-size: 25px;
+  margin: 0 18px;
+}
+
+.footer-list a:hover {
+  color: #E91E63;
+}
+
+.footer-list a:visited:hover {
+  color: #E91E63;
+}
+
+.authors-wrapper {
+  margin: 10px auto;
+}
+
+.authors {
+  font-size: 15px;
+  margin: auto;
+  white-space: normal;
+  text-align: center;
+}
+
+.authors a {
+  text-decoration-color: #E91E63;
+  color: #E91E63;
+}
+
+.authors a:hover {
+  color: black;
+}
+
+@media print {
+
+  .authors {
+    font-size: 12px;
+  }
+
+  .footer-list i {
+    font-size: 15px;
+  }
+
+}
