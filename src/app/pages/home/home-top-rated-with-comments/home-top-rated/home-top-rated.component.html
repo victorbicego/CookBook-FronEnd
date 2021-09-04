@@ -1,0 +1,35 @@
+<mat-tab-group headerPosition="below" mat-align-tabs="center" animationDuration="1500ms"
+               [(selectedIndex)]="selectedIndex" (selectedIndexChange)="getNewComment()" color="accent"
+               class="top-recipes-wrapper">
+  <mat-tab *ngFor="let recipe of recipes">
+
+    <ng-template mat-tab-label>
+      <mat-icon>remove</mat-icon>
+    </ng-template>
+
+    <div class="recipes-wrapper">
+      <mat-card-title>What about one of our top rated recipes?</mat-card-title>
+
+      <div class="image-button-container">
+        <button (click)="lastRecipe(selectedIndex)">
+          <mat-icon>navigate_before</mat-icon>
+        </button>
+
+        <img class="recipe-image" *ngIf="recipe.category === 'DESSERT'" src="../../../../../assets/dessert.jpg"
+             alt="dessert-image" (click)="goToSinglePageRecipe(recipe.id!)">
+        <img class="recipe-image" *ngIf="recipe.category === 'MAIN'" src="../../../../../assets/main.jpg"
+             alt="main-image" (click)="goToSinglePageRecipe(recipe.id!)">
+        <img class="recipe-image" *ngIf="recipe.category === 'STARTER'" src="../../../../../assets/starter.jpg"
+             alt="starter-image" (click)="goToSinglePageRecipe(recipe.id!)">
+
+        <button (click)="nextRecipe(selectedIndex)">
+          <mat-icon>navigate_next</mat-icon>
+        </button>
+      </div>
+
+      <mat-card-title class="recipe-name" (click)="goToSinglePageRecipe(recipe.id!)">{{recipe.name}}</mat-card-title>
+      <app-home-top-rated-comment [topComment]="topComment" class="comment"></app-home-top-rated-comment>
+    </div>
+
+  </mat-tab>
+</mat-tab-group>

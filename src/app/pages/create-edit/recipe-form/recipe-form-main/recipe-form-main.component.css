@@ -1,0 +1,27 @@
+.form-wrapper {
+  padding: 40px;
+}
+
+.author-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 0 0;
+  width: 100%;
+}
+
+.author {
+  width: 35%;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.button-wrapper button {
+  margin-left: 20px;
+  width: 100px;
+}
+

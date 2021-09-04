@@ -1,0 +1,12 @@
+.result-wrapper {
+  padding: 0 15%;
+}
+
+.not-found-wrapper {
+  margin: 60px 0;
+}
+
+.not-found-title {
+  color: #E91E63;
+  text-align: center;
+}

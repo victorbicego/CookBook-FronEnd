@@ -1,0 +1,9 @@
+<div class="title-wrapper">
+  <mat-card-title>{{recipe.name}}</mat-card-title>
+  <mat-card-subtitle [ngClass]="{'dark': dark}">{{recipe.category | titleCase}}
+    <span class="subtitle"
+          *ngIf="recipe.cuisine.country !== 'Other'">recipe from {{recipe.cuisine.country}}</span>
+    <span *ngIf="recipe.hashTagList && recipe.hashTagList.length>0">|</span>
+    <span class="hashtags" *ngFor="let hashtag of recipe.hashTagList">#{{hashtag.text}}</span>
+  </mat-card-subtitle>
+</div>

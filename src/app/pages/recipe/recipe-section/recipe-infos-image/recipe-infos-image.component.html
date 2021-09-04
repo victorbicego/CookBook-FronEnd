@@ -1,0 +1,19 @@
+<div class="image-information-wrapper">
+  <img class="recipe-image" *ngIf="recipe.category === 'DESSERT'" src="../../../../../assets/dessert.jpg"
+       alt="dessert-image">
+  <img class="recipe-image" *ngIf="recipe.category === 'MAIN'" src="../../../../../assets/main.jpg"
+       alt="main-image">
+  <img class="recipe-image" *ngIf="recipe.category === 'STARTER'" src="../../../../../assets/starter.jpg"
+       alt="starter-image">
+
+  <mat-list role="listitem" class="info-wrapper">
+    <mat-list-item class="info" [ngClass]="{'dark': dark}"><i class="fas fa-utensils"></i>{{recipe.portion}}
+    </mat-list-item>
+    <mat-list-item class="info" [ngClass]="{'dark': dark}"><i class="fas fa-clock"></i>{{recipe.preparationTime}} min
+    </mat-list-item>
+    <mat-list-item class="info" [ngClass]="{'dark': dark}"><i
+      class="fas fa-lightbulb"></i>{{recipe.difficultyGrade | titleCase}}</mat-list-item>
+    <mat-list-item class="info" [ngClass]="{'dark': dark}"><i class="fas fa-star"></i>{{recipe.rating | number: '1.1-1'}}/5.0
+    </mat-list-item>
+  </mat-list>
+</div>

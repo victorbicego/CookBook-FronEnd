@@ -1,0 +1,66 @@
+<div class="filter-wrapper">
+
+  <mat-card-title class="filter-title">Fell free to apply some filters</mat-card-title>
+
+  <div class="filter-container">
+
+    <div class="filter-row">
+
+      <mat-form-field class="category" appearance="fill" color="accent">
+        <mat-label>Category</mat-label>
+        <mat-select [(ngModel)]="category">
+          <mat-option *ngFor="let category of categories" [value]="category.toUpperCase()">{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="difficulty" appearance="fill" color="accent">
+        <mat-label>Difficulty</mat-label>
+        <mat-select [(ngModel)]="difficultyGrade">
+          <mat-option *ngFor="let difficulty of difficulties"
+                      [value]="difficulty.toUpperCase()">{{difficulty}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="cuisine" appearance="fill" color="accent">
+        <mat-label>Cuisine</mat-label>
+        <mat-select [(ngModel)]="cuisineFilter">
+          <mat-optgroup *ngFor="let continentName of continentList" [label]="continentName">
+            <mat-option *ngFor="let cuisineChild of (cuisineList | filterByContinent: continentName)"
+                        [value]="cuisineChild">{{cuisineChild.country}}</mat-option>
+          </mat-optgroup>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <div class="filter-row">
+      <div class="slider-wrapper">
+        <p>Max preparation time: <span *ngIf="preparationTime">{{preparationTime}} min</span></p>
+        <mat-slider
+          [max]="400"
+          [min]="1"
+          [thumbLabel]="true"
+          [(ngModel)]="preparationTime"
+          aria-labelledby="Preparation Time" color="accent">
+        </mat-slider>
+      </div>
+      <div class="slider-wrapper">
+        <p>Min rating: <span *ngIf="rating">{{rating | number: '1.1-1'}}/5.0</span></p>
+        <mat-slider
+          [max]="5"
+          [min]="1"
+          [thumbLabel]="true"
+          [(ngModel)]="rating"
+          aria-labelledby="Rating" color="accent">
+        </mat-slider>
+
+      </div>
+      <div class="button-wrapper">
+        <button mat-raised-button color="accent" (click)="resetFilterButton()" class="apply-button">Clear filter</button>
+        <button mat-raised-button color="primary" (click)="applyFilter()" class="apply-button">Apply filter</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>

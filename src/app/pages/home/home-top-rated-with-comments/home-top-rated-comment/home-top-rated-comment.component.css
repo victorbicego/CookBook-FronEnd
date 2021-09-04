@@ -1,0 +1,22 @@
+.comment-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: gray;
+  animation-name: loadText;
+  animation-duration: 8s;
+}
+
+@keyframes loadText {
+  from {
+    color: white;
+  }
+  to {
+    color: gray
+  }
+}

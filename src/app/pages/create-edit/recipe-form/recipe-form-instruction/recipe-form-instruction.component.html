@@ -1,0 +1,8 @@
+<mat-form-field class="instruction-wrapper" appearance="fill" color="accent">
+
+  <mat-label>Recipe's instructions</mat-label>
+
+  <textarea type="text" matInput placeholder="Ex. First cut the tomatoes..."
+            [(ngModel)]="instruction" (ngModelChange)="onChange()" rows="6" required maxlength="450"></textarea>
+
+</mat-form-field>

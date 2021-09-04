@@ -1,0 +1,27 @@
+.select-hashtag-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.select-wrapper {
+  width: 35%;
+}
+
+.time {
+  width: 100%;
+}
+
+.portion {
+  width: 100%;
+}
+
+.difficulty {
+  width: 100%;
+}
+
+.hashtag-wrapper {
+  width: 60%;
+  min-height: 100%;
+}

@@ -1,0 +1,28 @@
+<mat-card class="form-wrapper">
+
+  <mat-card-header>
+    <mat-card-title>Enter the recipe information</mat-card-title>
+  </mat-card-header>
+
+  <form [formGroup]="recipeForm">
+    <app-recipe-form-name-category-cuisine [editRecipe]="editRecipe"
+                                           (sendInfo)="addNameCategoryCuisine($event)"></app-recipe-form-name-category-cuisine>
+    <app-recipe-form-ingredient [editRecipe]="editRecipe"
+                                (sendInfo)="addIngredientList($event)"></app-recipe-form-ingredient>
+    <app-recipe-form-instruction [editRecipe]="editRecipe"
+                                 (sendInfo)="addInstruction($event)"></app-recipe-form-instruction>
+    <app-recipe-form-infos-hashtag [editRecipe]="editRecipe"
+                                   (sendInfo)="addInfoHashTag($event)"></app-recipe-form-infos-hashtag>
+    <div class="author-button-wrapper">
+      <app-recipe-form-author [editRecipe]="editRecipe" (sendInfo)="addAuthor($event)"
+                              class="author"></app-recipe-form-author>
+
+      <div class="button-wrapper">
+        <button mat-raised-button color="accent" (click)="clearForm()">Clear All</button>
+        <button mat-raised-button color="primary" [disabled]="!recipeForm.valid" (click)="openDialog()">Save</button>
+      </div>
+
+    </div>
+  </form>
+
+</mat-card>

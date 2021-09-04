@@ -1,0 +1,41 @@
+.ingredient-form-wrapper {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.ingredient-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.unit-quantity-name-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 87%;
+  margin-right: 0;
+}
+
+.unit {
+  width: 20%;
+  margin-bottom: -10px;
+}
+
+.quantity {
+  width: 20%;
+  margin-bottom: -10px;
+}
+
+.ingredient-name {
+  width: 55%;
+  margin-bottom: -10px;
+}
+
+.ingredient-button-wrapper {
+  width: 13%;
+  text-align: right;
+}
+
+.ingredient-button-wrapper button {
+  margin: 6px 5% 0 3%;
+}

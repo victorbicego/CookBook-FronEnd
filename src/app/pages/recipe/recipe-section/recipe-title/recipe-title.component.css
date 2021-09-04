@@ -1,0 +1,16 @@
+.dark{
+  background-color: #121212;
+  color: white;
+}
+
+.title-wrapper{
+  width: 100%;
+}
+
+.subtitle {
+  margin-right: 15px;
+}
+
+.hashtags {
+  margin-left: 15px;
+}
