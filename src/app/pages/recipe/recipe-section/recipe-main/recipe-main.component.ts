@@ -33,20 +33,22 @@ export class RecipeMainComponent implements OnInit {
     this.recipeService.returnSingleRecipe().subscribe(recipe => this.recipe = recipe);
   }
 
-  delete() {
+  delete(): void {
+
     let dialogRef = this.dialog.open(ConfirmDialogComponent);
     dialogRef.componentInstance.onYes
       .subscribe(() => {
         this.recipeService.deleteRecipe(this.recipe!.id!);
         this.router.navigate(['']);
-      })
+      });
+
   }
 
   selectDark(): void {
     this.dark = !this.dark;
   }
 
-  goToEditPage() {
+  goToEditPage(): void {
     this.navService.navigateAndStoreData("/edit/" + this.id, this.recipe);
   }
 

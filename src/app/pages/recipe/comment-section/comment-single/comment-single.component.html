@@ -1,19 +1,16 @@
-<div class="comment-wrapper">
-  <mat-card class="comment-mat-card" [ngClass]="{'dark': dark}">
+<mat-card class="comment-card" [ngClass]="{'dark': dark}">
 
-    <mat-card-content>
-      <p class="text-input">{{singleComment.text}}</p>
-    </mat-card-content>
+  <mat-card-content>
+    <p class="text">{{singleComment.text}}</p>
+  </mat-card-content>
 
-    <div class="rating-wrapper">
-      <button *ngFor="let b of selected; let i=index" title="{{i+1}}/5" [ngClass]="'button-'+selected[i]"><i
-        class="fas fa-star"></i></button>
-    </div>
+  <button *ngFor="let b of selected; let i=index" title="{{i+1}}/5" [ngClass]="'button-'+selected[i]" class="rating">
+    <i class="fas fa-star"></i></button>
 
-    <div class="author-button-wrapper">
-      <p class="author">Sent by {{singleComment.author}} on {{singleComment.dateOfPost}}</p>
-      <button mat-raised-button color="accent" (click)="deleteComment()">Delete Comment</button>
-    </div>
+  <div class="author-button-wrapper">
+    <p class="author">Sent by {{singleComment.author}} on {{singleComment.dateOfPost}}</p>
+    <button mat-raised-button color="accent" (click)="deleteComment()">Delete Comment</button>
+  </div>
 
-  </mat-card>
-</div>
+</mat-card>
+

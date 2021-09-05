@@ -1,14 +1,14 @@
-<div class="interaction-wrapper">
-  <button class="interaction-button" (click)="favorite()" [ngClass]="{'dark': dark}">
+<div class="menu">
+  <button class="menu-button" (click)="favorite()" [ngClass]="{'dark': dark}">
     <mat-icon>bookmark</mat-icon>
   </button>
-  <button class="interaction-button" [matMenuTriggerFor]="shareMenu" [ngClass]="{'dark': dark}">
+  <button class="menu-button" [matMenuTriggerFor]="shareMenu" [ngClass]="{'dark': dark}">
     <mat-icon>share</mat-icon>
   </button>
-  <button class="interaction-button" (click)="goToPrint()" [ngClass]="{'dark': dark}">
+  <button class="menu-button" (click)="goToPrint()" [ngClass]="{'dark': dark}">
     <mat-icon>print</mat-icon>
   </button>
-  <button class="interaction-button" (click)="selectDark()" [ngClass]="{'dark': dark}">
+  <button class="menu-button" (click)="selectDark()" [ngClass]="{'dark': dark}">
     <mat-icon>invert_colors</mat-icon>
   </button>
 </div>

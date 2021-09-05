@@ -4,6 +4,7 @@ import {CuisineInterface} from "../interfaces/cuisine-interface";
 @Pipe({
   name: 'filterByContinent'
 })
+
 export class FilterByContinentPipe implements PipeTransform {
 
   transform(cuisineList: CuisineInterface[], continent: string): CuisineInterface[] {

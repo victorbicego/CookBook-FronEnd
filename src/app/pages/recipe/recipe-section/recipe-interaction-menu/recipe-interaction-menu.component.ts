@@ -22,13 +22,14 @@ export class RecipeInteractionMenuComponent implements OnInit {
   }
 
   favorite() {
+    //We have no time to implement this function! It is to favorite and save using cookies.
   }
 
-  selectDark() {
-    this.onDark.emit()
+  selectDark(): void {
+    this.onDark.emit();
   }
 
-  goToPrint() {
+  goToPrint(): void {
     this.navService.navigateAndStoreData("/print/" + this.recipe.id, {recipe: this.recipe, average: this.average});
   }
 

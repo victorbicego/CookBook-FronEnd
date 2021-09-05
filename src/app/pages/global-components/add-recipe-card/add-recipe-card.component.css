@@ -1,38 +1,30 @@
-.add-recipe-wrapper{
+.add-recipe-card {
   margin: 50px 0;
   display: flex;
   justify-content: space-between;
   padding: 20px 40px;
 }
 
-.add-recipe-wrapper:hover{
+.add-recipe-card:hover {
   cursor: pointer;
 }
 
-.add-recipe-wrapper:hover .add-recipe-title{
+.add-recipe-card:hover .title {
   color: #E91E63;
 }
 
-.add-recipe-wrapper:hover .add-recipe-icon{
+.add-recipe-card:hover .icon {
   animation: rotating 2s linear infinite;
-
 }
 
-.add-recipe-title {
+.title {
   margin-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.add-recipe-icon-wrapper {
-  margin-right: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.add-recipe-icon {
+.icon {
   height: auto;
   width: auto;
   font-size: 60px;

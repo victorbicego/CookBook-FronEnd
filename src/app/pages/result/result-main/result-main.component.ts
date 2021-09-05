@@ -27,7 +27,7 @@ export class ResultMainComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private clearService: ClearService, private navigationService: NavigationService, private recipeService: RecipeService, private activatedRoute: ActivatedRoute) {
-    this.recipeService.returnResultRecipesList().subscribe(recipeList => this.recipeList = recipeList)
+    this.recipeService.returnResultRecipesList().subscribe(recipeList => this.recipeList = recipeList);
     this.recipeService.returnTotalByInputAndFilter().subscribe(total => this.length = total);
   }
 
@@ -46,22 +46,28 @@ export class ResultMainComponent implements OnInit {
       this.recipeService.getAllRecipesByInputAndFilter(url, this.pageIndex, this.pageSize);
       this.recipeService.countAllRecipesByInputAndFilter(url);
     });
+
   }
 
-  paginatorEvent(pageEvent: PageEvent) {
+  paginatorEvent(pageEvent: PageEvent): void {
+
     this.pageSize = pageEvent.pageSize;
     this.pageIndex = pageEvent.pageIndex;
     const url = this.navigationService.loadData().url;
     this.recipeService.countAllRecipesByInputAndFilter(url);
     this.recipeService.getAllRecipesByInputAndFilter(url, this.pageIndex, this.pageSize);
+
   }
 
-  getUrlFromFilter(url: string) {
+  getUrlFromFilter(url: string): void {
+
     if (this.paginator) {
       this.paginator.firstPage();
     }
-    this.navigationService.storeData({url:url});
+
+    this.navigationService.storeData({url: url});
     this.recipeService.countAllRecipesByInputAndFilter(url);
     this.recipeService.getAllRecipesByInputAndFilter(url, this.pageIndex, this.pageSize);
+
   }
 }

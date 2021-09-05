@@ -14,8 +14,8 @@ export class EditComponent implements OnInit {
   mainText: string = "EditBook";
   subText: string = "IT IS ALWAYS TIME TO MAKE CHANGES";
 
-  public recipe?: RecipeInterface;
-  public id?: number;
+  recipe?: RecipeInterface;
+  id?: number;
 
   constructor(private recipeService: RecipeService, private activatedRoute: ActivatedRoute, private navService: NavigationService) {
     this.activatedRoute.params.subscribe((params: Params) => {
@@ -25,13 +25,16 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0)
+
     if (this.navService.loadData()) {
       this.recipe = this.navService.loadData().recipe;
     }
+
     if (this.recipe === undefined) {
       this.recipeService.getRecipeById(this.id!);
       this.recipeService.returnSingleRecipe().subscribe(recipe => this.recipe = recipe);
     }
+
   }
 
 }

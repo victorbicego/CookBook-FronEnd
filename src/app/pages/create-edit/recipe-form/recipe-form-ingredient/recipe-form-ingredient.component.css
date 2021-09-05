@@ -1,10 +1,8 @@
-.ingredient-form-wrapper {
-  max-width: 100%;
+.form-wrapper {
   margin: 20px 0;
 }
 
-.ingredient-form {
-  width: 100%;
+.form-button-wrapper {
   display: flex;
   justify-content: space-between;
 }
@@ -13,7 +11,6 @@
   display: flex;
   justify-content: space-between;
   width: 87%;
-  margin-right: 0;
 }
 
 .unit {
@@ -26,16 +23,16 @@
   margin-bottom: -10px;
 }
 
-.ingredient-name {
+.name {
   width: 55%;
   margin-bottom: -10px;
 }
 
-.ingredient-button-wrapper {
+.buttons-wrapper{
   width: 13%;
   text-align: right;
 }
 
-.ingredient-button-wrapper button {
-  margin: 6px 5% 0 3%;
+.buttons-wrapper button {
+  margin: 6px 5% 0 5%;
 }

@@ -7,6 +7,7 @@ import {HashtagInterface} from "../../interfaces/hashtag-interface";
 @Injectable({
   providedIn: 'root'
 })
+
 export class HashtagService {
 
   private hashtagListSubject = new BehaviorSubject<HashtagInterface[]>([]);

@@ -59,7 +59,7 @@ export class ResultFilterComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
-  applyFilter() {
+  applyFilter(): void {
     const url = this.mountURL();
     this.navigationService.storeData({url: url});
     this.sendURL.emit(url);
@@ -91,7 +91,7 @@ export class ResultFilterComponent implements OnInit, OnChanges {
     return url;
   }
 
-  resetFilterButton() {
+  resetFilterButton(): void {
     this.difficultyGrade = undefined;
     this.category = undefined;
     this.cuisineFilter = undefined;
@@ -101,7 +101,7 @@ export class ResultFilterComponent implements OnInit, OnChanges {
     this.sendURL.emit(url);
   }
 
-  resetFilterInit() {
+  resetFilterInit(): void {
     this.difficultyGrade = undefined;
     this.category = undefined;
     this.cuisineFilter = undefined;

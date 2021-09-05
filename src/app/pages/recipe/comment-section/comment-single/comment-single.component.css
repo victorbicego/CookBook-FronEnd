@@ -1,19 +1,13 @@
-.comment-wrapper {
+.comment-card {
+  padding: 40px;
   margin-top: 30px;
 }
 
-.comment-mat-card {
-  max-width: 100%;
-  margin: auto;
-  padding: 30px 30px 15px 30px;
-}
-
-.text-input {
-  width: 100%;
+.text {
   text-align: justify;
 }
 
-.rating-wrapper button {
+.rating {
   margin: 10px 16px 0 0;
   padding: 0;
   background-color: transparent;
@@ -32,17 +26,16 @@
 .author-button-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
-.author{
+.author {
   font-size: 12px;
-  margin-bottom: 20px;
-  margin-top: 22px;
+  margin: 22px 0 0 0;
   color: darkgrey;
 }
 
-.dark{
+.dark {
   background-color: #121212;
   color: white;
 }

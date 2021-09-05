@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 @Injectable({
   providedIn: 'root'
 })
+
 export class NavigationService {
 
   private data?: any;
@@ -23,4 +24,5 @@ export class NavigationService {
   public loadData(): any {
     return this.data;
   }
+
 }

@@ -1,6 +1,6 @@
 <mat-list role="list" class="ingredient-wrapper">
   <h2 class="ingredient-title">Ingredients</h2>
   <mat-list-item class="ingredient-list-item" *ngFor="let ingredient of recipe.ingredientList"
-                 role="listitem"><p [ngClass]="{'dark': dark}" class="ingredient-name">{{ingredient.amount}} {{ingredient.unit.toLowerCase()}}
+                 role="listitem"><p [ngClass]="{'dark': dark}" class="name">{{ingredient.amount}} {{ingredient.unit.toLowerCase()}}
     - {{ingredient.name}}</p></mat-list-item>
 </mat-list>

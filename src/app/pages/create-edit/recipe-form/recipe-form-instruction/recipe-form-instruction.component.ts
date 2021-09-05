@@ -22,6 +22,7 @@ export class RecipeFormInstructionComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+
     if (this.editRecipe !== undefined) {
       this.instruction = this.editRecipe.instruction;
     }
@@ -32,6 +33,7 @@ export class RecipeFormInstructionComponent implements OnInit, OnChanges {
         this.instruction = undefined;
       }
     });
+
   }
 
   onChange() {

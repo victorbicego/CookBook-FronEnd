@@ -7,6 +7,7 @@ import {CuisineInterface} from "../../interfaces/cuisine-interface";
 @Injectable({
   providedIn: 'root'
 })
+
 export class CuisineService {
 
   private cuisineListSubject = new BehaviorSubject<CuisineInterface[]>([]);

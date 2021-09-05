@@ -7,27 +7,29 @@
       <mat-icon>remove</mat-icon>
     </ng-template>
 
-    <div class="recipes-wrapper">
+    <div class="recipe-wrapper">
       <mat-card-title>What about one of our top rated recipes?</mat-card-title>
 
       <div class="image-button-container">
+
         <button (click)="lastRecipe(selectedIndex)">
           <mat-icon>navigate_before</mat-icon>
         </button>
 
-        <img class="recipe-image" *ngIf="recipe.category === 'DESSERT'" src="../../../../../assets/dessert.jpg"
+        <img class="image" *ngIf="recipe.category === 'DESSERT'" src="../../../../../assets/dessert.jpg"
              alt="dessert-image" (click)="goToSinglePageRecipe(recipe.id!)">
-        <img class="recipe-image" *ngIf="recipe.category === 'MAIN'" src="../../../../../assets/main.jpg"
+        <img class="image" *ngIf="recipe.category === 'MAIN'" src="../../../../../assets/main.jpg"
              alt="main-image" (click)="goToSinglePageRecipe(recipe.id!)">
-        <img class="recipe-image" *ngIf="recipe.category === 'STARTER'" src="../../../../../assets/starter.jpg"
+        <img class="image" *ngIf="recipe.category === 'STARTER'" src="../../../../../assets/starter.jpg"
              alt="starter-image" (click)="goToSinglePageRecipe(recipe.id!)">
 
         <button (click)="nextRecipe(selectedIndex)">
           <mat-icon>navigate_next</mat-icon>
         </button>
+
       </div>
 
-      <mat-card-title class="recipe-name" (click)="goToSinglePageRecipe(recipe.id!)">{{recipe.name}}</mat-card-title>
+      <mat-card-title class="name" (click)="goToSinglePageRecipe(recipe.id!)">{{recipe.name}}</mat-card-title>
       <app-home-top-rated-comment [topComment]="topComment" class="comment"></app-home-top-rated-comment>
     </div>
 

@@ -1,4 +1,4 @@
-<mat-card class="recipe-wrapper" (click)="goToRecipePage(recipe.id)">
+<mat-card class="recipe-card" (click)="goToRecipePage(recipe.id)">
 
   <img class="recipe-image" *ngIf="recipe.category === 'DESSERT'" src="../../../../assets/dessert.jpg"
        alt="dessert-image">
@@ -7,27 +7,25 @@
   <img class="recipe-image" *ngIf="recipe.category === 'STARTER'" src="../../../../assets/starter.jpg"
        alt="starter-image">
 
-  <div class="infos-wrapper">
-    <mat-card-header class="title-subtitle-wrapper">
-      <mat-card-title class="recipe-title">{{recipe.name}}</mat-card-title>
-      <mat-card-subtitle class="subtitle-wrapper">{{recipe.category | titleCase}}
-        <span class="subtitle"
-              *ngIf="recipe.cuisine.country !== 'Other'">recipe from {{recipe.cuisine.country}}</span>
-        <span *ngIf="recipe.hashTagList && recipe.hashTagList.length>0">|</span>
-        <span class="hashtags" *ngFor="let hashtag of recipe.hashTagList">#{{hashtag.text}}</span>
-      </mat-card-subtitle>
+  <div class="information-wrapper">
 
-      <mat-list role="listitem" class="list-wrapper">
-        <mat-list-item class="info"><i class="fas fa-utensils"></i>{{recipe.portion}}
-        </mat-list-item>
-        <mat-list-item class="info"><i class="fas fa-clock"></i>{{recipe.preparationTime}} min
-        </mat-list-item>
-        <mat-list-item class="info"><i class="fas fa-lightbulb"></i>{{recipe.difficultyGrade | titleCase}}</mat-list-item>
-        <mat-list-item class="info"><i class="fas fa-star"></i>{{recipe.rating | number: '1.1-1'}}/5.0
-        </mat-list-item>
-      </mat-list>
+    <mat-card-title class="title">{{recipe.name}}</mat-card-title>
+    <mat-card-subtitle>{{recipe.category | titleCase}}
+      <span class="subtitle"
+            *ngIf="recipe.cuisine.country !== 'Other'">recipe from {{recipe.cuisine.country}}</span>
+      <span *ngIf="recipe.hashTagList && recipe.hashTagList.length>0">|</span>
+      <span class="hashtags" *ngFor="let hashtag of recipe.hashTagList">#{{hashtag.text}}</span>
+    </mat-card-subtitle>
 
-    </mat-card-header>
+    <mat-list role="listitem" class="list">
+      <mat-list-item class="info"><i class="fas fa-utensils"></i>{{recipe.portion}}
+      </mat-list-item>
+      <mat-list-item class="info"><i class="fas fa-clock"></i>{{recipe.preparationTime}} min
+      </mat-list-item>
+      <mat-list-item class="info"><i class="fas fa-lightbulb"></i>{{recipe.difficultyGrade | titleCase}}</mat-list-item>
+      <mat-list-item class="info"><i class="fas fa-star"></i>{{recipe.rating | number: '1.1-1'}}/5.0
+      </mat-list-item>
+    </mat-list>
 
     <p class="author">Sent by {{recipe.author}} on {{recipe.dateOfPost}}</p>
   </div>

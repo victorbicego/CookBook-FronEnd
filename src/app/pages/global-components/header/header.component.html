@@ -2,8 +2,8 @@
 
   <span><button (click)="goToHomePage()" class="title">CookBook</button></span>
 
-  <form class="search-wrapper">
-    <mat-form-field appearance="fill" class="search-field" color="accent">
+  <form class="search-form">
+    <mat-form-field appearance="fill" class="search-input" color="accent">
       <mat-label>Search a recipe</mat-label>
       <input matInput placeholder="Ex. Pizza" [(ngModel)]="inputText" [ngModelOptions]="{standalone:true}">
     </mat-form-field>
@@ -17,28 +17,38 @@
   </button>
 
   <mat-menu #beforeMenu="matMenu" xPosition="before" class="menu">
+
     <div class="menu-item bigger" routerLink="">
       <mat-icon>home</mat-icon>
       <span>Home</span></div>
+
     <mat-divider></mat-divider>
+
     <div class="menu-text">
       <span>Quick search:</span></div>
+
     <div class="menu-item" (click)="goToResult('main')">
       <mat-icon>room_service</mat-icon>
       <span>Main</span></div>
+
     <div class="menu-item" (click)="goToResult('dessert')">
       <mat-icon>cake</mat-icon>
       <span>Desserts</span></div>
+
     <div class="menu-item" (click)="goToResult('vegan')">
       <mat-icon>spa</mat-icon>
       <span>Vegan</span></div>
+
     <div class="menu-item" (click)="goToResult('outdoor')">
       <mat-icon>beach_access</mat-icon>
       <span>Outdoor</span></div>
+
     <mat-divider></mat-divider>
+
     <div class="menu-item" routerLink="/create">
       <mat-icon>create</mat-icon>
       <span>Create</span></div>
+
   </mat-menu>
 
 </mat-toolbar>

@@ -1,4 +1,4 @@
-<mat-card class="form-wrapper">
+<mat-card class="form-card">
 
   <mat-card-header>
     <mat-card-title>Enter the recipe information</mat-card-title>
@@ -14,8 +14,7 @@
     <app-recipe-form-infos-hashtag [editRecipe]="editRecipe"
                                    (sendInfo)="addInfoHashTag($event)"></app-recipe-form-infos-hashtag>
     <div class="author-button-wrapper">
-      <app-recipe-form-author [editRecipe]="editRecipe" (sendInfo)="addAuthor($event)"
-                              class="author"></app-recipe-form-author>
+      <app-recipe-form-author class="author" [editRecipe]="editRecipe" (sendInfo)="addAuthor($event)"></app-recipe-form-author>
 
       <div class="button-wrapper">
         <button mat-raised-button color="accent" (click)="clearForm()">Clear All</button>

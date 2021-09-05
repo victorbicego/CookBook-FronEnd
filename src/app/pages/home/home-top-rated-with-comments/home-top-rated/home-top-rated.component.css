@@ -1,8 +1,8 @@
 .top-recipes-wrapper {
-  margin: 30px 0;
+  margin: 40px 0;
 }
 
-.recipes-wrapper {
+.recipe-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 
-.recipe-image {
+.image {
   border-radius: 8px;
   width: 90%;
   height: 45vh;
@@ -37,14 +37,14 @@
   margin-bottom: 30px;
 }
 
-.recipe-image:hover {
+.image:hover {
   cursor: pointer;
 }
 
-.recipe-name:hover {
+.name:hover {
   cursor: pointer;
 }
 
-.comment{
+.comment {
   width: 90%;
 }

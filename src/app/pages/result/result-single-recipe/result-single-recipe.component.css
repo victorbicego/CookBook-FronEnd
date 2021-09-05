@@ -1,14 +1,14 @@
-.recipe-wrapper {
+.recipe-card {
   display: flex;
   padding: 40px;
   margin: 50px 0;
 }
 
-.recipe-wrapper:hover {
+.recipe-card:hover {
   cursor: pointer;
 }
 
-.recipe-wrapper:hover .recipe-title {
+.recipe-card:hover .title {
   color: #E91E63;
 }
 
@@ -20,24 +20,11 @@
   margin-right: 30px;
 }
 
-.infos-wrapper {
+.information-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.title-subtitle-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.recipe-title{
-  margin-left: -16px;
-}
-
-.subtitle-wrapper{
-  margin-left: -16px;
 }
 
 .subtitle {
@@ -48,16 +35,16 @@
   margin-left: 15px;
 }
 
-.list-wrapper {
-  width: 90%;
+.list {
+  width: 95%;
   display: flex;
   justify-content: space-between;
+  padding: 0;
 }
 
 .info {
   width: auto;
   font-size: 15px;
-  text-wrap: none;
 }
 
 .info i {
@@ -68,6 +55,6 @@
   width: 100%;
   text-align: right;
   font-size: 12px;
-  margin-bottom: 0;
   color: darkgrey;
+  margin: 0;
 }

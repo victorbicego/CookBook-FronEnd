@@ -7,6 +7,7 @@ import {RecipeInterface} from "../../interfaces/recipe-interface";
 @Injectable({
   providedIn: 'root'
 })
+
 export class RecipeService {
 
   private recipeListSubjectTop3Rated = new BehaviorSubject<RecipeInterface[]>([]);
@@ -62,10 +63,10 @@ export class RecipeService {
 
   public getAllRecipesByInputAndFilter(url: string, page: number, quantity: number): void {
     this.http.get<RecipeInterface[]>(environment.baseUrl + "recipe/result" + url + "&page=" + page + "&quantity=" + quantity).subscribe((recipeList: RecipeInterface[]) => {
-      this.recipeListSubjectResult.next(recipeList)
-    }, error => {
-      this.recipeListSubjectResult.next([]);
-    }
+        this.recipeListSubjectResult.next(recipeList)
+      }, error => {
+        this.recipeListSubjectResult.next([]);
+      }
     );
   }
 

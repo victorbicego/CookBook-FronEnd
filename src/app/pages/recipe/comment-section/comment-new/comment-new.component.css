@@ -1,31 +1,19 @@
-.comment-wrapper {
-  margin-top: 10px;
-}
-
-.comment-mat-card {
-  max-width: 100%;
-  margin: auto;
-  padding: 30px 30px 15px 30px;
-}
-
-.text-input-wrapper {
-  width: 100%;
+.comment-card {
+  margin: 10px 0;
+  padding: 40px;
 }
 
 .text-input {
-  height: 80px;
+  width: 100%;
 }
 
-.rating-wrapper button {
+.rating {
   margin-right: 16px;
   background-color: transparent;
   border-color: transparent;
 }
 
-.rating-wrapper button:hover {
-  margin-right: 16px;
-  background-color: transparent;
-  border-color: transparent;
+.rating:hover {
   color: #E91E63;
   cursor: pointer;
 }
@@ -60,7 +48,11 @@
   opacity: 50%;
 }
 
-.dark .text-input-wrapper {
+.dark .button-not-selected:hover {
+  color: #E91E63;
+}
+
+.dark .text-input {
   background-color: white;
   color: #121212;
 }

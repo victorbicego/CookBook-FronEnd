@@ -3,16 +3,16 @@
 <div class="single-recipe-wrapper">
   <mat-card *ngIf="recipe" class="recipe-card" [ngClass]="{'dark': dark}">
 
-    <div class="title-interaction-wrapper">
-      <app-recipe-title [recipe]="recipe" [dark]="dark" class="title-wrapper"></app-recipe-title>
+    <div class="title-menu-wrapper">
+      <app-recipe-title [recipe]="recipe" [dark]="dark" class="title"></app-recipe-title>
       <app-recipe-interaction-menu [recipe]="recipe" [dark]="dark" (onDark)="selectDark()"
-                                   class="interaction-wrapper"></app-recipe-interaction-menu>
+                                   class="menu"></app-recipe-interaction-menu>
     </div>
 
     <div class="image-ingredients-wrapper">
-            <app-recipe-infos-image [recipe]="recipe" [dark]="dark"
-                                    class="image-info-wrapper"></app-recipe-infos-image>
-            <app-recipe-ingredients [recipe]="recipe" [dark]="dark"></app-recipe-ingredients>
+      <app-recipe-infos-image [recipe]="recipe" [dark]="dark"
+                              class="image"></app-recipe-infos-image>
+      <app-recipe-ingredients [recipe]="recipe" [dark]="dark"></app-recipe-ingredients>
     </div>
 
     <div class="instruction-wrapper">

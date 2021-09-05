@@ -38,6 +38,7 @@ export class RecipeFormNameCategoryCuisineComponent implements OnInit, OnChanges
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+
     if (this.editRecipe !== undefined) {
       this.name = this.editRecipe.name;
       this.category = this.editRecipe.category;
@@ -52,6 +53,7 @@ export class RecipeFormNameCategoryCuisineComponent implements OnInit, OnChanges
         this.cuisineChild = undefined;
       }
     });
+
   }
 
   onChange(): void {

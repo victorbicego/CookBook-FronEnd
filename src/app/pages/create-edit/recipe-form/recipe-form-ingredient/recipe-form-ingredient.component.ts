@@ -27,6 +27,7 @@ export class RecipeFormIngredientComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+
     if (this.editRecipe !== undefined) {
       this.ingredientList = this.editRecipe.ingredientList;
     }
@@ -38,6 +39,7 @@ export class RecipeFormIngredientComponent implements OnInit, OnChanges {
         this.addIngredient();
       }
     });
+
   }
 
   addIngredient(): void {

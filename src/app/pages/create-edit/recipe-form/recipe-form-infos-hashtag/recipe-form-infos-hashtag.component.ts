@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, SimpleChanges, EventEmitter, OnChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Difficulty} from "../../../../enums/difficulty";
 import {HashtagService} from "../../../../services/hashtag/hashtag.service";
 import {ClearService} from "../../../../services/clear/clear.service";
@@ -34,6 +34,7 @@ export class RecipeFormInfosHashtagComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+
     if (this.editRecipe !== undefined) {
       this.preparationTime = this.editRecipe.preparationTime;
       this.portion = this.editRecipe.portion;
@@ -50,9 +51,10 @@ export class RecipeFormInfosHashtagComponent implements OnInit, OnChanges {
         this.hashTagList = [];
       }
     });
+
   }
 
-  onChange() {
+  onChange(): void {
     this.sendInfo.emit({
       preparationTime: this.preparationTime,
       portion: this.portion,

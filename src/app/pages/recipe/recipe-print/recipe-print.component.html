@@ -1,13 +1,10 @@
 <div class="single-recipe-wrapper">
   <mat-card *ngIf="recipe" class="recipe-card">
 
-    <div class="title-interaction-wrapper">
-      <app-recipe-title [recipe]="recipe" class="title-wrapper"></app-recipe-title>
-    </div>
+    <app-recipe-title [recipe]="recipe"></app-recipe-title>
 
     <div class="image-ingredients-wrapper">
-      <app-recipe-infos-image [recipe]="recipe"
-                              class="image-info-wrapper"></app-recipe-infos-image>
+      <app-recipe-infos-image [recipe]="recipe" class="image-info-wrapper"></app-recipe-infos-image>
       <app-recipe-ingredients [recipe]="recipe"></app-recipe-ingredients>
     </div>
 
@@ -16,11 +13,7 @@
       <p class="instruction-text">{{recipe.instruction}}</p>
     </div>
 
-    <div class="author-button-wrapper">
-      <p class="author">Sent by {{recipe.author}} on {{recipe.dateOfPost}}</p>
-      <div class="button-wrapper">
-      </div>
-    </div>
+    <p class="author">Sent by {{recipe.author}} on {{recipe.dateOfPost}}</p>
 
   </mat-card>
 </div>

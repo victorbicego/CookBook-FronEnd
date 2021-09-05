@@ -31,7 +31,7 @@ export class RecipePrintComponent implements OnInit {
 
     setTimeout(() => {
       window.print();
-      this.router.navigate(['single/' + this.id]);
+      this.router.navigate(['recipe/' + this.id]);
     }, 1500);
   }
 

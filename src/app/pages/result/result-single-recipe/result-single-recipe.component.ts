@@ -9,15 +9,16 @@ import {Router} from "@angular/router";
 })
 export class ResultSingleRecipeComponent implements OnInit {
 
-  @Input() recipe!:RecipeInterface;
+  @Input() recipe!: RecipeInterface;
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
-  goToRecipePage(id?: number) {
-    this.router.navigate(['recipe/'+id]);
+  goToRecipePage(id?: number): void {
+    this.router.navigate(['recipe/' + id]);
   }
 
 }

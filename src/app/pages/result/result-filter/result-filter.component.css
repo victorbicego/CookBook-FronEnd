@@ -1,51 +1,45 @@
-.filter-wrapper{
-  /*padding: 25px;*/
+.filter-wrapper {
   margin-bottom: 40px;
 }
 
-.filter-title{
+.title {
   font-size: 20px;
   margin-bottom: 25px;
 }
 
-.filter-container{
-  width: 100%;
-  margin: 0;
-}
-
-.filter-row{
+.filter-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
 }
 
-.category{
+.category {
   width: 30%;
 }
 
-.difficulty{
+.difficulty {
   width: 30%;
 }
 
-.cuisine{
+.cuisine {
   width: 30%;
 }
 
-.slider-wrapper{
+.slider {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   width: 30%;
 }
 
-.button-wrapper{
+.button-wrapper {
   width: 30%;
   display: flex;
   justify-content: space-between;
 }
 
-.apply-button{
+.button {
   width: 45%;
   height: 40px;
 }

@@ -22,6 +22,7 @@ export class RecipeFormAuthorComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+
     if (this.editRecipe !== undefined) {
       this.author = this.editRecipe.author;
     }
@@ -32,6 +33,7 @@ export class RecipeFormAuthorComponent implements OnInit, OnChanges {
         this.author = "";
       }
     });
+
   }
 
   onChange(): void {

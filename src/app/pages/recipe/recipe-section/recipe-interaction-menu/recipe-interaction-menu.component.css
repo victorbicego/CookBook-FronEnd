@@ -1,21 +1,16 @@
-.dark {
-  background-color: #121212;
-  color: white;
-}
-
-.interaction-wrapper {
+.menu {
   width: 100%;
   padding: 0;
   display: flex;
   justify-content: space-between;
 }
 
-.interaction-button {
+.menu-button {
   background-color: transparent;
   border-color: transparent;
 }
 
-.interaction-button:hover {
+.menu-button:hover {
   cursor: pointer;
   color: #E91E63;
 }
@@ -32,11 +27,15 @@
 
 .share-button :hover {
   background-color: transparent;
-  border-color: transparent;
   cursor: pointer;
   color: #E91E63;
 }
 
 .share-button i {
   font-size: 18px;
+}
+
+.dark {
+  background-color: #121212;
+  color: white;
 }

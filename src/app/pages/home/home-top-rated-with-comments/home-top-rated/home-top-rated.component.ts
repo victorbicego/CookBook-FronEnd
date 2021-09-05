@@ -12,16 +12,16 @@ import {RecipeService} from "../../../../services/recipe/recipe.service";
 })
 export class HomeTopRatedComponent implements OnInit {
 
-  selectedIndex: number;
+  selectedIndex: number = 0;
 
   recipes: RecipeInterface[] = [];
   topComment?: CommentInterface;
 
   constructor(private recipeService: RecipeService, private commentService: CommentService, private router: Router) {
-    this.selectedIndex = 0;
   }
 
   ngOnInit(): void {
+    this.commentService.returnTopComment().subscribe(comment => this.topComment = comment);
     this.recipeService.getTop3Recipes();
     this.recipeService.returnTop3ratedRecipesList()
       .subscribe(recipeList => this.recipes = recipeList);
@@ -41,7 +41,6 @@ export class HomeTopRatedComponent implements OnInit {
 
   getNewComment(): void {
     this.commentService.getTopCommentByRecipe(this.recipes[this.selectedIndex].id!);
-    this.commentService.returnTopComment().subscribe(comment => this.topComment = comment);
   }
 
 }

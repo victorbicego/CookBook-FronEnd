@@ -4,6 +4,7 @@ import {Subject} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
+
 export class ClearService {
 
   private clear = new Subject<boolean>();
@@ -11,7 +12,7 @@ export class ClearService {
   constructor() {
   }
 
-  public getClear() {
+  public getClear(): Subject<boolean> {
     return this.clear;
   }
 

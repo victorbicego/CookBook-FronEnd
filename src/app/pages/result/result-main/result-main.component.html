@@ -1,12 +1,11 @@
 <app-page-title [mainText]="mainText" [subText]="subText"></app-page-title>
 
-<div class="result-wrapper">
+<div class="main-wrapper">
   <app-result-filter [input]="inputText" [page]="pageIndex"
                      [quantity]="pageSize" (sendURL)="getUrlFromFilter($event)"></app-result-filter>
 
-  <div class="not-found-wrapper" *ngIf="recipeList.length==0">
-    <mat-card-title class="not-found-title">Ops! No recipes found. Please try other search.</mat-card-title>
-  </div>
+  <mat-card-title *ngIf="recipeList.length==0" class="not-found">Ops! No recipes found. Please try other search.
+  </mat-card-title>
 
   <div *ngIf="recipeList.length > 0">
     <app-result-single-recipe *ngFor="let recipe of recipeList" [recipe]="recipe"></app-result-single-recipe>

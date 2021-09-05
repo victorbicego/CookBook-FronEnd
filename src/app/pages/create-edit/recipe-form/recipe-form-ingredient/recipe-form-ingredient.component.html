@@ -1,5 +1,5 @@
-<div class="ingredient-form-wrapper">
-  <div *ngFor="let _ of ingredientList; index as i" class="ingredient-form">
+<div class="form-wrapper">
+  <div *ngFor="let _ of ingredientList; index as i" class="form-button-wrapper">
 
     <div class="unit-quantity-name-wrapper">
 
@@ -16,7 +16,7 @@
                (ngModelChange)="onChange()" required min="0.25">
       </mat-form-field>
 
-      <mat-form-field class="ingredient-name" appearance="fill" color="accent">
+      <mat-form-field class="name" appearance="fill" color="accent">
         <mat-label>Name</mat-label>
         <input matInput placeholder="Ex. Cheese" [(ngModel)]="ingredientList[i].name" (ngModelChange)="onChange()"
                required minlength="1">
@@ -24,7 +24,7 @@
 
     </div>
 
-    <div class="ingredient-button-wrapper">
+    <div class="buttons-wrapper">
       <button mat-mini-fab color="primary" (click)="addIngredient()"
               [disabled]="!isValidIngredient(ingredientList[i]) || ingredientList.length-1 !== i">
         <mat-icon *ngIf="(i === ingredientList.length-1)">add</mat-icon>
