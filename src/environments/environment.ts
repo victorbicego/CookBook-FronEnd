@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: "https://cookbook-group3.herokuapp.com/api/"
+  baseUrl: 
 };
 
 /*
